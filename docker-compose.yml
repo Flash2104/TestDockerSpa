@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  testspadocker:
+    image: ${DOCKER_REGISTRY-}testspadocker
+    build:
+      context: .
+      dockerfile: TestSPADocker\Dockerfile
