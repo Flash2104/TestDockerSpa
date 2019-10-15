@@ -12,6 +12,11 @@ services:
     volumes:
       - ${APPDATA}/Microsoft/UserSecrets:C:\Users\ContainerUser\AppData\Roaming\Microsoft\UserSecrets:ro
       - ${APPDATA}/ASP.NET/Https:C:\Users\ContainerUser\AppData\Roaming\ASP.NET\Https:ro
+
+  clientapp:
+    ports:
+      - "49617:80"
+      - "44315:443"
 networks:
   default:
     external:

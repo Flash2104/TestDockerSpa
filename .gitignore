@@ -1,0 +1,4 @@
+bin/
+obj/
+.vs/
+TestSPADocker/package-lock.json

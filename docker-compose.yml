@@ -6,3 +6,10 @@ services:
     build:
       context: .
       dockerfile: TestSPADocker\Dockerfile
+
+  clientapp:
+    image: ${DOCKER_REGISTRY-}clientapp
+    build:
+      context: .
+      dockerfile: Web.Client\Dockerfile
+
