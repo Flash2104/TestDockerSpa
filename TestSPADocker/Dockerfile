@@ -11,7 +11,7 @@ WORKDIR /src
 COPY ["TestSPADocker/TestSPADocker.csproj", "TestSPADocker/"]
 RUN dotnet restore "TestSPADocker/TestSPADocker.csproj"
 COPY . .
-WORKDIR "/src/TestSPADocker"
+WORKDIR /src/TestSPADocker
 RUN dotnet build "TestSPADocker.csproj" -c Release -o /app
 
 FROM build AS publish

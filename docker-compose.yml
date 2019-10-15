@@ -4,12 +4,26 @@ services:
   testspadocker:
     image: ${DOCKER_REGISTRY-}testspadocker
     build:
-      context: .
-      dockerfile: TestSPADocker\Dockerfile
+      context: ./TestSPADocker
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
 
   clientapp:
     image: ${DOCKER_REGISTRY-}clientapp
     build:
-      context: .
-      dockerfile: Web.Client\Dockerfile
+      context: ./Web.Client
+      dockerfile: Dockerfile
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - app-network
 
+
+networks:
+  app-network:
+    driver: bridge
